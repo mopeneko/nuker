@@ -27,9 +27,9 @@ class MyClient(discord.Client):
 
         try:
             await self._command(message)
-            self.logger.error(f"[ OK ] {message.guild.name} | {message.channel.name}")
+            self.logger.info(f"[ OK ] {message.guild.name} | {message.channel.name}")
         except:
-            self.logger.info(f"[FAIL] {message.guild.name} | {message.channel.name}")
+            self.logger.error(f"[FAIL] {message.guild.name} | {message.channel.name}")
 
     def _validate(self, message):
         channel = message.channel
